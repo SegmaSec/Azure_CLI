@@ -54,7 +54,7 @@
 + docker build --tag appsvc-tutorial-custom-image .  
 
 ### Vérifier que la build fonctionne en exécutant le conteneur Docker localement :  
-docker run -it -p 8000:8000 appsvc-tutorial-custom-image
++ docker run -it -p 8000:8000 appsvc-tutorial-custom-image
 
 ### Azure (Azure Container Registry) :  
 + az acr create --name registry-name --resource-group myResourceGroup --sku Basic --admin-enabled true  
@@ -68,10 +68,10 @@ La sortie JSON de cette commande fournit deux mots de passe, ainsi que le nom d�
 + docker login registry-name.azurecr.io --username registry-username
 
 ### Une fois la connexion établie, étiqueter votre image Docker locale dans le registre :  
-docker tag appsvc-tutorial-custom-image registry-name.azurecr.io/appsvc-tutorial-custom-image:latest  
++ docker tag appsvc-tutorial-custom-image registry-name.azurecr.io/appsvc-tutorial-custom-image:latest  
 
 ###  Utiliser la commande docker push pour envoyer (push) l’image vers le registre :  
-docker push registry-name.azurecr.io/appsvc-tutorial-custom-image:lates
++ docker push registry-name.azurecr.io/appsvc-tutorial-custom-image:lates
 
 ### Créer un plan App Service à l’aide de la commande az appservice plan create:  
 • az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --is-linux
@@ -88,13 +88,8 @@ docker push registry-name.azurecr.io/appsvc-tutorial-custom-image:lates
 ### Attach disk a Groupe Identique:
 + az vmss disk attach -g MyRg -n MyScalSet --size-gb 128
 
-
 ## Network Groupe Security:
-```bash
-$az network nsg create --resource-group $My_Resource --name $My_NSG
-```
++ az network nsg create --resource-group $My_Resource --name $My_NSG
 
 ## Public IP:
-```bash
-$az network public-ip create --resource-group $My_resource --name $My_Public_IP
-```
++ az network public-ip create --resource-group $My_resource --name $My_Public_IP
