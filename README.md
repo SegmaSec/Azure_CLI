@@ -12,7 +12,7 @@
 + az network vnet subnet create --name MySubnet --resource-group MyRg --adress-prefix 10.0.0.20/24 --vnet-name MyVnet
 
 ## Cree Carte Reseau:
-+ az network nic --name MyCarte --subnet-name MySubnet --adress-prefix 10.0.0.12/24
++ az network nic create --name MyCarte --subnet-name MySubnet --adress-prefix 10.0.0.12/24
 
 ## Cree Public IP:
 + az network public-ip create --name MyIP --allocation-methode Dynamic/Static
